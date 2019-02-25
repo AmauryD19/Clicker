@@ -31,6 +31,6 @@ function multiplicatorScore() {
     displayMultiplicator();
 }
 /* appels des fonctions de base */
-click.addEventListener('click', clickScore);
+click.addEventListener('mousedown', clickScore);
 displayScore();
 displayMultiplicator(); 

@@ -17,7 +17,7 @@ function displayScore() {
 }
 
 function displayMultiplicator() {
-    multiplicator.value = 'Multiplier x' + multiplier;
+    multiply.value = 'x' + multiplier;
 }
     /* les scores*/
 function clickScore() {

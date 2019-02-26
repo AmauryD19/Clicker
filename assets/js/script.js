@@ -2,12 +2,15 @@ let click = document.getElementById('click');
 let affichage = document.getElementById('affichage');
 let multiplier = document.getElementById('multiplier');
 let autoclicker = document.getElementById('autoclicker');
+let bonus = document.getElementById('bonus');
 
-let score = 200;
+let score = 4999;
 let valeurClick = 1;
 let multiplicateur = 1;
 let prixMultipicateur= 50;
 let prixAutoclicker = 200;
+let prixBonus = 5000;
+let bonusTime = 0;
 
 function augmenterMultiplicateur() {
     if (score >= prixMultipicateur) {
@@ -32,6 +35,19 @@ function autoclickerTEST() {
         afficherScore();
     }
 }
+function bonusUP() {
+    if (score < prixBonus) {
+        bonus.style.display = "none";
+    }
+    else {
+        bonus.style.display = "";
+    }
+}
+function bonusTEST() {
+    for(bonusTime=0; bonusTime<=30; bonusTime++) {
+        valeurClick *= 2;
+    }
+}
 
 function augmenterScore() {
     score += valeurClick;
@@ -47,3 +63,5 @@ function afficherScore() {
 click.addEventListener('mousedown', augmenterScore);
 multiplier.addEventListener('mousedown', augmenterMultiplicateur);
 autoclicker.addEventListener('mousedown', autoclickerTEST);
+bonus.addEventListener('mousedown', bonusTEST);
+bonusUP();

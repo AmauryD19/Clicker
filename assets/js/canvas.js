@@ -1,11 +1,12 @@
 /* Variable lave et timer de propagation */
-let lavaExplosion = [], explosionTimer = 0;
+let lavaExplosion = [];
+let explosionTimer = 0;
 
 /* setup des canvas */
 function setup() {
-  createCanvas(window.innerWidth, window.innerHeight);
+  createCanvas(500, window.innerHeight);
   createLava(200, 100);
-  createLava(width / 2, height / 2);
+  createLava(width/2, height/2);
 }
 
 /* canvas */

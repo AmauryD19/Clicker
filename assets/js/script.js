@@ -25,7 +25,7 @@ function augmenterMultiplicateur() {
     }
 }
 
-function autoclickerTEST() {
+/*function autoclickerTEST() {
     if (score >= prixAutoclicker) {
         score -= prixAutoclicker;
         autoclicker.style.display = "none";
@@ -38,16 +38,19 @@ function autoclickerTEST() {
 function bonusUP() {
     if (score < prixBonus) {
         bonus.style.display = "none";
+        bonusUP()
     }
     else {
         bonus.style.display = "";
+        bonusUP()
     }
 }
 function bonusTEST() {
     for(bonusTime=0; bonusTime<=30; bonusTime++) {
         valeurClick *= 2;
+        bonusUP()
     }
-}
+}*/
 
 function augmenterScore() {
     score += valeurClick;
@@ -64,4 +67,3 @@ click.addEventListener('mousedown', augmenterScore);
 multiplier.addEventListener('mousedown', augmenterMultiplicateur);
 autoclicker.addEventListener('mousedown', autoclickerTEST);
 bonus.addEventListener('mousedown', bonusTEST);
-bonusUP();

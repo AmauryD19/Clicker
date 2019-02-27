@@ -11,7 +11,7 @@ function setup() {
 
 /* canvas */
 function draw() {
-  background('#222');
+  background('#310600');
   explosionTimer++;
 
   for(let i = 0; i < lavaExplosion.length; i++) {

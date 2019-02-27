@@ -4,7 +4,7 @@ let explosionTimer = 0;
 
 /* setup des canvas */
 function setup() {
-  createCanvas(500, window.innerHeight);
+  createCanvas(window.innerWidth, window.innerHeight);
   createLava(200, 100);
   createLava(width/2, height/2);
 }

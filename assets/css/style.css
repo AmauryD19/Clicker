@@ -10,5 +10,5 @@ canvas { position: absolute; top: 0%; z-index: 2; }
 
 #autoclicker { border: none; background: #950a11; color: grey; font-weight: 100; padding: 20px; text-transform: uppercase; border-radius: 6px; display: inline-block; }
 
-#autoclicker:hover { color: white !important; font-weight: 700 !important; letter-spacing: 3px; background: #f06625; text-shadow: 0px 0px 6px #f7f002; -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57); -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57); -webkit-transition: all 0.4s ease 0s; transition: all 0.4s ease 0s; }
+#autoclicker:hover { color: white; font-weight: 700; letter-spacing: 3px; background: #f06625; text-shadow: 0px 0px 6px #f7f002; -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57); -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57); -webkit-transition: all 0.4s ease 0s; transition: all 0.4s ease 0s; }
 /*# sourceMappingURL=style.css.map */

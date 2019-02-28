@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body { margin: 0; padding: 0; overflow: hidden; color: white; /* display: flex; flex-direction: column; align-content: center; */ }
 
 canvas { position: absolute; top: 0%; z-index: 2; }
@@ -11,4 +12,21 @@ canvas { position: absolute; top: 0%; z-index: 2; }
 #autoclicker { border: none; background: #950a11; color: grey; font-weight: 100; padding: 20px; text-transform: uppercase; border-radius: 6px; display: inline-block; }
 
 #autoclicker:hover { color: white; font-weight: 700; letter-spacing: 3px; background: #f06625; text-shadow: 0px 0px 6px #f7f002; -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57); -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57); -webkit-transition: all 0.4s ease 0s; transition: all 0.4s ease 0s; }
+
+/* #testShop {
+    background-color: yellow;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 33%;
+    height: 100%;
+    z-index: 99999999;
+} 
+
+Problèmes résolus: réduire la zone active du canvas, zone shop cliquable bien superposée au canvas
+et n'augmente pas le score quand on clic sur le shop.
+
+Problème non résolu : changer la taille cliquable de mon canvas, je n'ai pas encore compris. En changeant dans mon 
+.js j'arrive à la changer mais comme je ne peux pas utiliser de % ça m'empêche d'avoir une taille qui s'adapte correctement.
+je cherche encore la solution.*/
 /*# sourceMappingURL=style.css.map */

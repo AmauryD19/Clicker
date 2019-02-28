@@ -4,7 +4,7 @@ let multiplier = document.getElementById('multiplier');
 let autoclicker = document.getElementById('autoclicker');
 let bonus = document.getElementById('bonus');
 
-let score = 5000;
+let score = 0;
 let valeurClick = 1;
 let multiplicateur = 1;
 let prixMultipicateur= 50;
@@ -17,15 +17,13 @@ function augmenterMultiplicateur() {
         score -= prixMultipicateur;
         multiplicateur += 1;
         prixMultipicateur *= 2;
-        console.log(prixMultipicateur);
-        console.log(multiplicateur);
         valeurClick = multiplicateur;
         afficherScore();
-        multiplier.innerHTML = ("Multiplicateur x" +multiplicateur+ " "+prixMultipicateur);
+        multiplier.innerHTML = ("Multiplicateur x" +multiplicateur+ " pour "+prixMultipicateur+" Lavas");
     }
 }
 
-function autoclickerTEST() {
+function autoclickerRun() {
     if (score >= prixAutoclicker) {
         score -= prixAutoclicker;
         autoclicker.style.display = "none";
@@ -35,71 +33,53 @@ function autoclickerTEST() {
         afficherScore();
     }
 }
-/*
-function bonusUP() {
-    if (score < prixBonus) {
-        bonus.style.display = "none";
-        bonusUP()
-    }
-    else {
-        bonus.style.display = "";
-        bonusUP()
-    }
-}
-function bonusTEST() {
-    for(bonusTime=0; bonusTime<=30; bonusTime++) {
-        valeurClick *= 2;
-        bonusUP()
-    }
-}*/
 
-/*function bonusTEST() {
-    score -= prixBonus;
-    bonusTimer = setInterval(function(){
-        score += 2*valeurClick;
-        bonusTimer--;
-        if (bonusTimer>0) {
-            bonus.innerHTML = bonusTimer;
-            console.log(bonusTimer);
-        }
-        if (bonusTEST<=0) {
-            bonusTEST();
-        }
-    }, 1000);
-}*/
-
-function bonusTEST() {
-    if(score>=prixBonus) {
-        score -= prixBonus;
-        let scoreBonus = 2*valeurClick
-        score += scoreBonus;
-        bonusTimer--;
-        console.log("look "+scoreBonus);
-        bonus.innerHTML = bonusTimer;
-        afficherScore();
-        if (bonusTimer===0) {
-            bonusOver();
-        }
-    }
-}
-
-function bonusOver(){
-    score += valeurClick;
+function bonusTurnOff() {
+    valeurClick /= 2;
+    bonusTimer = 30;
     afficherScore();
+    bonus.disabled = false;
+}
+
+function bonusTurnOnn() {
+        if(bonusTimer <= 30 && score >= prixBonus) {
+            score -= prixBonus;
+            valeurClick *= 2;
+            bonus.disabled = true;
+            let interval = setInterval(function(){
+                bonusTimer--;
+                bonus.innerHTML = bonusTimer;
+                afficherScore();
+                if(bonusTimer === 0){
+                    clearInterval(interval);
+                    bonusTurnOff();
+                }
+            }, 1000);
+        }
 }
 
 function augmenterScore() {
     score += valeurClick;
-    console.log(score);
     afficherScore();
+    if(score>=prixMultipicateur) {
+        multiplier.disabled = false;
+    }
+    else {
+        multiplier.disabled = true;
+    }    
 }
 
 function afficherScore() {
-    affichage.innerHTML = score;
+    if(score<2) {
+    affichage.innerHTML = score+" Lava";
+    }
+    else {
+        affichage.innerHTML = score+" Lavas";
+    }
 }
 
 
 click.addEventListener('mousedown', augmenterScore);
 multiplier.addEventListener('mousedown', augmenterMultiplicateur);
-autoclicker.addEventListener('mousedown', autoclickerTEST);
-bonus.addEventListener('mousedown', bonusTEST);
+autoclicker.addEventListener('mousedown', autoclickerRun);
+bonus.addEventListener('mousedown', bonusTurnOnn);

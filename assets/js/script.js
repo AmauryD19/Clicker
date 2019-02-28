@@ -4,7 +4,7 @@ let multiplier = document.getElementById('multiplier');
 let autoclicker = document.getElementById('autoclicker');
 let bonus = document.getElementById('bonus');
 
-let score = 4999;
+let score = 0;
 let valeurClick = 1;
 let multiplicateur = 1;
 let prixMultipicateur= 50;

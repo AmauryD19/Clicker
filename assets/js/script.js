@@ -4,7 +4,7 @@ let multiplier = document.getElementById('multiplier');
 let autoclicker = document.getElementById('autoclicker');
 let bonus = document.getElementById('bonus');
 
-let score = 0;
+let score = 7000;
 let valeurClick = 1;
 let multiplicateur = 1;
 let prixMultipicateur= 50;
@@ -39,6 +39,7 @@ function bonusTurnOff() {
     bonusTimer = 30;
     afficherScore();
     bonus.disabled = false;
+    bonus.innerHTML = "30sec clic x2 | 5000 Lavas";
 }
 
 function bonusTurnOnn() {
